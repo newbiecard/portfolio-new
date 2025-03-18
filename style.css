@@ -1,0 +1,309 @@
+/* === Global Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* === Efek 3D Canvas === */
+#three-js-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* === Navbar Styling === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #000428, #004e92);
+  padding: 15px 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+/* Menu Links */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #00ffcc;
+}
+
+/* === Responsive Navbar === */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* === Home Section === */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* Foto Profil */
+.home-profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00ffcc;
+}
+
+/* Nama & Deskripsi */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  color: #ddd;
+}
+
+/* Button */
+.btn {
+  background: #00ffcc;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.6s;
+}
+
+.btn:hover {
+  background: #008877;
+}
+
+/* === About Section === */
+/* Styling Section About Me */
+#about {
+  text-align: center;
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 255, 204, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Judul */
+#about h2 {
+  font-size: 32px;
+  color: #00ffcc;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Paragraf */
+#about p {
+  font-size: 18px;
+  color: white;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* === Projects Section Fix === */
+#projects {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+/* Container Project */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Buat grid responsif */
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Box Project */
+.project-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Hover efek */
+.project-item:hover {
+  transform: scale(1.05); /* Sedikit membesar pas hover */
+  background: rgba(0, 255, 204, 0.3);
+}
+
+/* Gambar Project */
+.project-item img {
+  width: 100%;
+  max-height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* === Contact Section === */
+#contact {
+  padding: 100px 50px;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Form Contact */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Input & Textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1em;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #bbb;
+}
+
+/* Tombol Kirim */
+.contact-form button {
+  background: #00ffcc;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #008877;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #contact {
+    padding: 80px 20px;
+  }
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* === Navbar Responsive (Sidebar) === */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  /* Logo Tetap Muncul */
+  .navbar .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00ffcc;
+    display: block; /* Pastikan selalu tampil */
+  }
+
+  /* Sidebar Menu */
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 4, 40, 0.9);
+    box-shadow: -5px 0 10px rgba(0, 255, 204, 0.2);
+    padding-top: 60px;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul.active {
+    right: 0;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.2);
+  }
+
+  /* Tombol Menu (☰) */
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+  }
+}
